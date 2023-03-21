@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>블로그</title>
+</head>
+<body>
+    <h2>블로그</h2>
+
+    {% for p in posts %}
+    <hr/>
+        <h3> {{p.title}}</h3>
+        <h4> {{p.created_at}}</h4>
+        <p> {{ p.content }}</p>
+    {% endfor %}
+</body>
+</html>
