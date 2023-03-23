@@ -1,0 +1,23 @@
+{% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block main_area %}
+<div class="container">
+    <h1>Create a new post</h1>
+    <form method="post" enctype="multipart/form-data"> {% csrf_token %}
+        <table>
+            {{ form | crispy }}
+            <div id="div_id_tags_str">
+                <label for="id_tags_str">Tags:</label>
+                <input type="text" name="tags_str" id="id_tags_str" class="textinput TextInput form-control">
+
+
+            </div>
+            <br/>
+        </table>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+
+{% endblock %}

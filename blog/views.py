@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Post
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView
 
 # Create your views here.
 
@@ -28,6 +28,18 @@ class PostList(ListView):
 
 class PostDetail(DetailView):
     model = Post
+
+
+class PostCreate(CreateView):
+    model = Post
+    fields = ['title', 'content', 'head_image', 'author']
+
+
+class PostUpdate(UpdateView):
+    model = Post
+    fields = ['title', 'content', 'head_image']
+
+    template_name = 'blog/post_update_form.html'
 
 
 '''
